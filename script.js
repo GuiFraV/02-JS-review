@@ -301,4 +301,99 @@ const nombresPairs = (array) => array.filter((n) => n%2 == 0 )
 
 console.log(nombresPairs([1,2,3,4]))
 
-// test
+function getTotalReviewCount(book){
+
+    const goodreads = book.reviews.goodreads.reviewsCount;
+    const librarything = book.reviews.librarything.reviewsCount;
+    return goodreads + librarything
+
+}
+
+console.log(getTotalReviewCount(book))
+
+const utilisateur = {
+  nom: "Martin",
+  adresse: {
+    rue: "Rue de la Paix",
+    ville: "Paris",
+    codePostal: 75000,
+    coordonnees: {
+      latitude: 48.8566, //ici
+      longitude: 2.3522
+    }
+  }
+};
+
+function obtenirLatitude(user){
+
+  return user?.adresse?.coordonnees?.latitude ?? "Latitude non disponible";
+
+}
+
+console.log(obtenirLatitude(utilisateur));
+
+const preferencesUtilisateur = {
+  theme: "sombre",
+  notifications: {
+    email: true,
+    sms: false,
+    push: {
+      actif: true,
+      frequence: "quotidien" //ici
+    }
+  }
+};
+
+function frequenceNotificationPush(obj){
+
+  return obj?.notifications?.push?.frequence ?? "Fréquence non définie";
+
+}
+
+console.log(frequenceNotificationPush(preferencesUtilisateur))
+
+const profil = {
+  nom: "Dupont",
+  contact: {
+    email: "dupont@email.com", // ici
+    telephone: {
+      fixe: "01-23-45-67-89",
+      mobile: "06-78-90-12-34" //ici
+    }
+  },
+  preferences: {
+    couleurTheme: "bleu",
+    newsletter: true //ici
+  }
+};
+
+// function obtenirEmail(profil){
+
+//   return profil?.contact?.email ?? "Email non disponible"
+
+// }
+
+
+const obtenirEmail = (profil) => profil?.contact?.email ?? "Email non disponible"; 
+
+console.log(obtenirEmail(profil))
+
+// function obtenirMobile(profil){
+  
+//   return profil?.contact?.telephone?.mobile ?? "Numéro mobile non disponible"
+
+// }
+
+const obtenirMobile = (profil) => profil?.contact?.telephone?.mobile ?? "Numéro mobile non disponible";
+
+console.log(obtenirMobile(profil))
+
+// function preferenceNewsLetter(profil){
+  
+//   return profil?.preferences?.newsletter;
+
+// }
+
+const preferenceNewsLetter = (profil) => profil?.preferences?.newsletter;
+
+console.log(preferenceNewsLetter(profil))
