@@ -167,3 +167,72 @@ newGenres;
 
 const updatedBook = {...book, moviePublicationDate: '2001-12-19', pages: 1210}
 updatedBook;
+
+const film = ["Inception", ["Leonardo DiCaprio", "Ellen Page", ["Christopher Nolan", "Action"]]];
+const [titre, [premierActeur, deuxiemeActeur,[realisateur,genre]]] = film
+genre
+
+const voiture = [
+  "Tesla", "Model 3", 
+  { couleur: "rouge", 
+    annee: 2020, 
+    options: ["GPS", "Toit ouvrant"] 
+  }
+];
+
+const [
+  marque, modele, 
+  {couleur,
+  annee,
+  options: [premierOption, deuxiemeOption]
+  }
+] = voiture
+
+premierOption
+
+function afficherInfosEtudiant(arrayStudent){
+  
+  const [prenom, nom, age, [noteMath, noteAnglais, noteHistoire ]] = arrayStudent;
+
+  console.log(`Prénom : ${prenom}`) 
+  console.log(`Nom : ${nom}`) 
+  console.log(`Âge : ${age}`)
+  console.log(`Notge de math : ${noteMath}`)
+  console.log(`Note d'anglais : ${noteAnglais}`)
+  console.log(`Note d'histoire : ${noteHistoire}`)
+
+} 
+
+const etudiant = ["Emma", "Dupont", 20, [15, 18, 14]];
+
+afficherInfosEtudiant(etudiant)
+
+
+function somme(...rest){
+
+  let result = 0;
+
+  for(let i = 0 ; i< rest.length; i++){
+
+   result += rest[i];
+
+  }
+
+  console.log(result);
+}
+
+
+somme(1,2,3,4,5,6,7,8,9,10)
+
+const obj1 = { a: 1, b: 2 };
+const obj2 = { b: 3, c: 4 };
+const objFusion = {...obj1, ...obj2}
+
+objFusion
+
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+
+const arrFusion = [...arr1, ...arr2]
+
+arrFusion
