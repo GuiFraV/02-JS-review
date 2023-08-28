@@ -397,3 +397,47 @@ console.log(obtenirMobile(profil))
 const preferenceNewsLetter = (profil) => profil?.preferences?.newsletter;
 
 console.log(preferenceNewsLetter(profil))
+
+const produits = [
+  { nom: "Ordinateur", prix: 1000 },
+  { nom: "Téléphone", prix: 500 },
+  { nom: "Casque", prix: 100 },
+  { nom: "Souris", prix: 25 }
+];
+
+function augmenterPrix(arr, percent) {
+  const pc = 1 + (percent / 100);
+  return arr.map((el) => {
+    return {
+      nom: el.nom,
+      prix: el.prix * pc
+    };
+  });
+}
+
+console.log(augmenterPrix(produits, 10));
+
+// function listeNoms(produits){
+
+//   return produits.map((el) => el?.nom )
+
+// }
+
+const listeNoms = (produits) => produits.map((el) => el?.nom)
+
+console.log(listeNoms(produits))
+
+// function prixTVA(produits){
+
+//   const pc = 1 + (20/100);
+//   console.log(pc)
+//   produits.map((el) => el.tva = el?.prix * pc)
+//   return produits
+
+// }
+
+const pc = 1 + (20/100);
+
+const prixTVA = (produits) => produits.map((el) => el.tva = el?.prix * pc)
+
+console.log(prixTVA(produits))
