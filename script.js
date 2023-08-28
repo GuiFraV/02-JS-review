@@ -236,3 +236,67 @@ const arr2 = [4, 5, 6];
 const arrFusion = [...arr1, ...arr2]
 
 arrFusion
+
+function categorieAge(age){
+
+
+  age < 13 ? console.log("Enfant") :  false
+
+  age >= 13 && age <= 19 ? console.log("Adolescent") : false
+  
+  age > 19 ? console.log("Adulte") : false
+
+
+}
+
+// categorieAge(20)
+
+function prixEntree(age, student) {
+
+  age < 5 ? console.log("Gratuit") : false
+
+  student && age > 5 ? console.log('5€') : false
+
+  age > 5 && student == false ? console.log(('10€')) : false
+
+
+}
+
+// prixEntree(7, true)
+
+function verifierStock(nombre){
+
+  return nombre == 0 ? console.log("En rupture de stock") : 
+  nombre >= 1 && nombre <= 5 ? console.log("Stock faible") : 
+  nombre > 5 ? console.log("Stock disponible") : 
+  false 
+
+}
+
+verifierStock(6)
+
+function prixVente(stock, promotion){
+
+ return promotion ? console.log('20€') :
+ stock > 0 && stock < 6 ? console.log('30€') :
+ console.log('25€')
+
+}
+
+prixVente(5, false)
+
+const double = (nombre) => nombre*2; 
+
+console.log(double(30))
+
+const some = (first, second) => first + second;
+
+console.log(some(1,8));
+
+const majuscule = (arrayString) => arrayString.map((c) => c.toUpperCase());
+
+console.log(majuscule(['a','b','c']))
+
+const nombresPairs = (array) => array.filter((n) => n%2 == 0 )
+
+console.log(nombresPairs([1,2,3,4]))
