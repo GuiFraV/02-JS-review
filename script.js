@@ -468,3 +468,53 @@ console.log(plusDeTrenteAns(personnes))
 const estEtudiant = (pers) => pers.filter((el) => el.profession == "Étudiante")
 
 console.log(estEtudiant(personnes))
+
+const commandes = [
+  { numero: "C001", montant: 150 },
+  { numero: "C002", montant: 250 },
+  { numero: "C003", montant: 75 },
+  { numero: "C004", montant: 120 },
+  { numero: "C005", montant: 300 }
+];
+
+function totalCommandes(arr){
+
+  return arr.reduce((acc, montant) => acc + montant.montant, 0)
+
+}
+
+console.log(totalCommandes(commandes))
+
+function commandeLaPlusElevee(arr){
+
+  return arr.reduce((acc, montantEleve) => (acc < montantEleve.montant) ? montantEleve.montant : acc , arr[0]);
+
+}
+
+console.log(commandeLaPlusElevee(commandes));
+
+
+const notes = [
+  { etudiant: "Alice", note: 15 },
+  { etudiant: "Bob", note: 12 },
+  { etudiant: "Charlie", note: 18 },
+  { etudiant: "David", note: 10 },
+  { etudiant: "Eva", note: 14 }
+];
+
+function moyenneNotes(arr){
+
+  const somme = arr.reduce((acc, etudiants) => acc + etudiants.note , 0)
+
+  return somme/arr.length
+}
+
+console.log(moyenneNotes(notes))
+
+function noteLaPlusBasse(arr){
+
+  return arr.reduce((acc, etudiant) => acc < etudiant.note ? acc : etudiant.note ,arr[0])
+
+}
+
+console.log(noteLaPlusBasse(notes))
