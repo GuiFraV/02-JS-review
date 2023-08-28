@@ -441,3 +441,30 @@ const pc = 1 + (20/100);
 const prixTVA = (produits) => produits.map((el) => el.tva = el?.prix * pc)
 
 console.log(prixTVA(produits))
+
+const personnes = [
+  { nom: "Martin", age: 35, profession: "Ingénieur" },
+  { nom: "Sophie", age: 28, profession: "Designer" },
+  { nom: "Lucas", age: 42, profession: "Médecin" },
+  { nom: "Julie", age: 19, profession: "Étudiante" },
+  { nom: "Pierre", age: 67, profession: "Retraité" }
+];
+
+// function plusDeTrenteAns(pers){
+
+//   return pers.filter((el) => el.age > 29)
+
+// }
+
+const plusDeTrenteAns = (pers) => pers.filter((el) => el.age > 29)
+
+console.log(plusDeTrenteAns(personnes))
+
+// function estEtudiant(pers){
+
+//   return pers.filter((el) => el.profession == 'Étudiante')
+// }
+
+const estEtudiant = (pers) => pers.filter((el) => el.profession == "Étudiante")
+
+console.log(estEtudiant(personnes))
