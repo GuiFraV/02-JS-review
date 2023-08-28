@@ -300,3 +300,5 @@ console.log(majuscule(['a','b','c']))
 const nombresPairs = (array) => array.filter((n) => n%2 == 0 )
 
 console.log(nombresPairs([1,2,3,4]))
+
+// test
