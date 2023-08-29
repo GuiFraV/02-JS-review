@@ -559,3 +559,34 @@ const etu = {
 const {nom, prenom, notes : {math, anglais}} = etu
 
 console.log(anglais)
+
+const com = [
+  { id: 1, produit: "Stylo", quantite: 5, prixUnitaire: 1.5 },
+  { id: 2, produit: "Cahier", quantite: 2, prixUnitaire: 3 },
+  { id: 3, produit: "Gomme", quantite: 3, prixUnitaire: 0.5 },
+  { id: 4, produit: "Crayon", quantite: 4, prixUnitaire: 0.75 }
+];
+
+const b = (obj) => {
+
+  return obj.reduce((acc, c) => acc + (c.quantite * c.prixUnitaire) , 0)
+
+}
+
+console.log(b(com))
+
+const mots = ["pomme", "banane", "fraise", "kiwi", "ananas", "mangue", "cerise"];
+
+function motLePlusLong(arr){
+
+  return arr.reduce((acc, mot) => acc.length > mot.length ? acc : mot ,"")
+
+
+}
+
+console.log(motLePlusLong(mots));
+
+const arr = [3, 7, 1, 9 ,6]
+const sorted = arr.slice().sort((a, b) => a - b);
+sorted;
+arr;
