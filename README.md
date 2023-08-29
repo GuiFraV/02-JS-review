@@ -74,3 +74,35 @@ const doubles = nombres.map(n => n * 2);
 ### Pourquoi ces méthodes sont-elles essentielles pour React ?
 
 React est une bibliothèque JavaScript qui repose fortement sur les concepts ES6 et les versions ultérieures de JavaScript. Que ce soit pour définir des composants sous forme de fonctions fléchées, utiliser le destructuring pour gérer les props ou encore utiliser .map() pour afficher des listes, ces techniques sont omniprésentes dans le développement React.
+
+## Gestion de l'asynchronicité en JavaScript
+
+JavaScript offre plusieurs méthodes pour gérer les opérations asynchrones, telles que les requêtes réseau. Deux des méthodes les plus populaires sont les Promesses et `async/await`.
+
+### Promesse API
+
+Les Promesses sont un moyen de gérer les opérations asynchrones sans tomber dans l'enfer des callbacks. Elles peuvent être en trois états : en attente, résolues ou rejetées.
+
+```javascript
+// Exemple utilisant la Promesse API
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+.then((res) => res.json())
+.then((data) => console.log(data));
+```
+
+Dans cet exemple, la méthode fetch() renvoie une promesse. La méthode .then() est utilisée pour gérer la résolution de cette promesse. La première .then() convertit la réponse en JSON, et la seconde .then() affiche les données.
+
+### Fonctions async/await
+
+Les fonctions async/await sont une amélioration syntaxique apportée par ES7 pour rendre le code asynchrone plus lisible et similaire à un code synchrone traditionnel.
+
+```javascript
+async function getTodos(){
+  const res = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+  const data = await res.json();
+  console.log(data);
+  return data;
+}
+```
+
+Dans cet exemple, la déclaration async signifie que la fonction renvoie toujours une promesse. L'opérateur await est utilisé pour attendre qu'une promesse soit résolue. Cette approche rend le code asynchrone plus structuré et évite l'enfer des callbacks.
