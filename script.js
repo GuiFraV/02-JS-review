@@ -518,3 +518,44 @@ function noteLaPlusBasse(arr){
 }
 
 console.log(noteLaPlusBasse(notes))
+
+
+const nombres = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+
+const pair = (arr) => {
+
+  let paires = [];
+  // return arr.filter((el) => el%2 == 0)
+
+  for(let i = 0 ; i < arr.length; i++){
+
+    if(arr[i]%2 == 0){
+
+      paires.push(arr[i]);
+
+    }
+
+  }
+
+  return paires;
+
+}
+
+console.log(pair(nombres))
+
+
+const etu = {
+  nom: "Dupont",
+  prenom: "Jean",
+  age: 22,
+  notes: {
+    math: 15,
+    anglais: 12,
+    histoire: 14
+  }
+};
+
+const {nom, prenom, notes : {math, anglais}} = etu
+
+console.log(anglais)
